@@ -1,4 +1,3 @@
-# 中文版
 ## Ivy's Obsidian Life System
 
 > 一个基于 PARA 与 Periodic Notes 构建的 All-in-One Obsidian 知识管理系统。
