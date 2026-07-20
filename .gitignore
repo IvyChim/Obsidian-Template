@@ -1,7 +1,7 @@
 # macOS
 .DS_Store
 
-# Obsidian workspace (个人窗口布局)
+# Obsidian workspace
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 
@@ -11,3 +11,6 @@
 # Temporary files
 *.tmp
 *.log
+
+# VSCode
+.vscode
