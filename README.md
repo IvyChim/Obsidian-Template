@@ -96,7 +96,7 @@ Periodic Notes 回答的是另一个问题：**「事情发生在什么时候？
 
 是整个 Vault 的入口，由【homepage】插件生成，内容可自行编辑，插件可将其固定为首页布局，它主要提供【统计Dashboard、快速导航、最近活动页面入口】
 
-![[Home.png]]
+![Home](./03Resources/00Obsidian/Assets/Home.png)
 
 ### ⏳ Schedule Dashboard (2026.md)
 
@@ -108,7 +108,7 @@ Periodic Notes 回答的是另一个问题：**「事情发生在什么时候？
 
 【日程总览】是一个关于当前月的to do list日历图，由自行配置JS及CSS片段实现。
 
-![[Schedule Dashboard.png]]
+![Schedule Dashboard](./03Resources/00Obsidian/Assets/Schedule_dashboard.png)
 
 ### 📚 阅读管理
 
@@ -120,8 +120,7 @@ Periodic Notes 回答的是另一个问题：**「事情发生在什么时候？
 
 当然，这套逻辑完全可复用在其他Areas中，如 Film/Music的档案管理。
 
-
-![[Reading.png]]
+![Reading](./03Resources/00Obsidian/Assets/Reading.png)
 
 ### 📝 模版管理
 
