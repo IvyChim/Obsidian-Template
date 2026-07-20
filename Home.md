@@ -18,7 +18,7 @@ dv.paragraph(
 
 ```dataviewjs  
 await dv.view(  
-"03Resources/00Obsidian/CSS_Scripts/time-dashboard"  
+"03Resources/00Obsidian/Scripts/time-dashboard"  
 );  
 ``` 
 

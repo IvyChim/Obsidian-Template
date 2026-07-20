@@ -14,13 +14,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "🏠 Home.md",
+                "file": "Home.md",
                 "mode": "source",
                 "source": false
               },
               "pinned": true,
               "icon": "lucide-file",
-              "title": "🏠 Home"
+              "title": "Home"
             }
           },
           {
@@ -38,8 +38,23 @@
               "icon": "lucide-file",
               "title": "2026"
             }
+          },
+          {
+            "id": "3adb54ffe01ef8b3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -51,7 +66,7 @@
       {
         "id": "d8892cc23d6a80e2",
         "type": "tabs",
-        "dimension": 32.690453230472514,
+        "dimension": 48.721399730821,
         "children": [
           {
             "id": "ec2cf56b35b86103",
@@ -68,7 +83,7 @@
       {
         "id": "b82e75210794424c",
         "type": "tabs",
-        "dimension": 67.30954676952749,
+        "dimension": 51.27860026917901,
         "children": [
           {
             "id": "3529b6911dce55e1",
@@ -145,13 +160,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "🏠 Home.md",
+                "file": "README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "🏠 Home 的大纲"
+              "title": "README 的大纲"
             }
           },
           {
@@ -230,7 +245,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 331.5
+    "width": 331.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -248,46 +264,51 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "3529b6911dce55e1",
+  "active": "3adb54ffe01ef8b3",
   "lastOpenFiles": [
+    "03Resources/00Obsidian/Templates/TP02_Reading.md",
+    "03Resources/00Obsidian/Assets/Template.png",
+    "03Resources/00Obsidian/Templates/TP01_Diary.md",
+    "README.md",
+    "02Areas/01Reading/00Reading.md",
+    "03Resources/00Obsidian/Assets/Reading.png",
+    "03Resources/00Obsidian/Assets/Schedule Dashboard.png",
+    "00PeriodicNotes/2026/2026.md",
+    "03Resources/00Obsidian/Assets/Home.png",
+    "Home.md",
+    "03Resources/00Obsidian/Assets/Full_view.png",
+    "attachments/MacBook Air - 1.png",
+    "03Resources/00Obsidian/Assets/Full_view.png",
+    "attachments/MacBook Air - 1_副本.png",
+    "attachments",
+    "03Resources/00Obsidian/Assets",
+    "attachments/Pasted image 20260718234212.png",
+    "03Resources/00Obsidian/Templates/TP04_Music.md",
+    "03Resources/00Obsidian/Templates/TP03_Film.md",
+    "00PeriodicNotes/2026/202607/20260718.md",
+    "02Areas/03Music Library/00Music.md",
+    "02Areas/01Reading/十一月的此刻.md",
+    "02Areas/01Reading/未命名.md",
+    "00PeriodicNotes/2026/202606/20260630.md",
+    "00PeriodicNotes/ImportantDates.md",
     "01Projects/Example Project.md",
     "欢迎.md",
-    "🏠 Home.md",
     "02Areas/04Travel/00Travel.md",
-    "02Areas/03Music Library/00Music.md",
     "02Areas/02Film Library/00Film.md",
-    "02Areas/01Reading/00Reading.md",
     "02Areas/01Reading/南极.md",
-    "02Areas/01Reading/十一月的此刻.md",
     "02Areas/01Reading/苏菲的世界.md",
     "02Areas/01Reading/attachments/南极.jpg",
-    "02Areas/01Reading/attachments/苏菲的世界.jpg",
-    "02Areas/01Reading/attachments/十一月的此刻.jpg",
     "02Areas/01Reading/attachments/南极.md",
     "02Areas/01Reading/attachments/十一月的此刻.md",
     "02Areas/01Reading/attachments/苏菲的世界.md",
     "02Areas/01Reading/attachments",
-    "03Resources/00Obsidian/Templates/TP02_Reading.md",
-    "00PeriodicNotes/2026/2026.md",
-    "00PeriodicNotes/ImportantDates.md",
     "00PeriodicNotes/未命名/未命名",
     "00PeriodicNotes/未命名",
     "00PeriodicNotes/Inbox.md",
-    "00PeriodicNotes/Important.md",
-    "00PeriodicNotes/2026/202606/20260629.md",
-    "00PeriodicNotes/2026/202606/20260630.md",
-    "03Resources/00Obsidian/Templates/TP01_Diary.md",
-    "03Resources/00Obsidian/CSS_Scripts/time-dashboard.js",
-    "00PeriodicNotes/2026/202606/20260622.md",
-    "00PeriodicNotes/2026/202606/20260623.md",
-    "00PeriodicNotes/2026/202606/20260624.md",
-    "00PeriodicNotes/2026/202606/20260625.md",
-    "00PeriodicNotes/2026/202606/20260626.md",
-    "03Resources/00Obsidian/CSS_Scripts/view.css",
+    "03Resources/00Obsidian/Scripts/time-dashboard.js",
+    "03Resources/00Obsidian/Scripts/view.css",
     "00.PeriodicNotes/2026/202607",
     "00.PeriodicNotes/2026",
-    "00.PeriodicNotes",
-    "03Resources/00Obsidian/CSS_Scripts/habit-tracker.css",
-    "03Resources/00Obsidian/CSS_Scripts/habit-tracker.js"
+    "00.PeriodicNotes"
   ]
 }
