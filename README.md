@@ -174,4 +174,4 @@ Periodic Notes 回答的是另一个问题：**「事情发生在什么时候？
     - 根据 README 中的插件列表安装所需社区插件
     - 安装完成后，点击 **Trust author and enable plugins（信任作者并启用插件）**
 4. **开始使用**
-    - 打开 **Home.md**，即可进入 Dashboard 开始体验整个 Vault。
+    - 点击左边“管理工作区布局”，打开 Default 布局，即可进入 Dashboard 开始体验整个 Vault。
