@@ -4,7 +4,7 @@
 
 本仓库是一个开箱即用的 Obsidian Vault 模板，旨在帮助刚接触 Obsidian 的用户快速建立一套完整、可持续维护的个人知识管理系统（PKM）。
 
-本人入坑 Obsidian 将近三年，在此之前一直使用Onenote作为主要笔记工具。得益于AI工具应用，如今要上手 Obsidian 比三年前要简单得多。如果完全靠手搓 JavaScript、CSS ，真的很容易劝退一大部分人，特别是新手或对管理系统不熟悉的用户。但个人体验而言，Obsidian 绝对是目前市面上最好用且最有前景的笔记软件。因此，为了向更多人安利这款软件，本文将基于我长期实践和不断优化的仓库结构整理一个**开箱即用 Obsidian Vault 模板**，希望**新手们**再也无需从零开始折腾各种插件配置，只需下载并打开，就能拥有一套完整的知识管理系统，并逐步构建属于自己的 Second Brain。
+本人入坑 Obsidian 将近三年，在此之前一直使用Onenote作为主要笔记工具。得益于AI工具应用，如今要上手 Obsidian 比三年前要简单得多。如果完全靠手搓 JavaScript、CSS ，真的很容易劝退一大部分人，特别是新手或对管理系统不熟悉的用户。但个人体验而言，Obsidian 绝对是目前市面上最好用且最有前景的笔记软件。因此，为了向更多人安利这款软件，本文将基于我长期实践和不断优化的仓库结构整理一个**开箱即用 Obsidian Vault 模板**，希望**新手小伙伴**再也无需从零开始折腾各种插件配置，只需下载并打开，就能拥有一套完整的知识管理系统，并逐步构建属于自己的 Second Brain。
 
 ## 设计理念
 
@@ -14,20 +14,20 @@
 	- 毕业论文
 	- 数学建模竞赛
 	- 雅思备考
-	这些项目结束后，会归档至 Archive。
+这些项目结束后，会归档至 Archive。
 	
 - **Areas（领域）**：指长期持续维护的责任领域，没有明确结束时间。如：
 	- 阅读
 	- 健康管理
 	- 财务管理
 	- 语言学习
-	Areas 更关注自身持续成长，而不是一次性完成。
+Areas 更关注自身持续成长，而不是一次性完成。
 	
 - **Resources（资源）**：主要用于存放知识、资料和参考信息，可以按主题分类整理，也可以设立临时中转站，将收集的信息暂时放置，最后归入Areas关联的主题上。如：
 	- 技术笔记
 	- 学习资料
 	- Obsidian 配置
-	这里更像自己的知识库（Second Brain），后期可以接入AI协助消化知识。
+这里更像自己的知识库（Second Brain），后期可以接入AI协助消化知识。
 	
 - **Archive（归档）**：所有已经完成或暂时不再维护的内容都会进入 Archive，从而保持当前工作空间简洁。
 
@@ -106,9 +106,9 @@ Periodic Notes 回答的是另一个问题：**「事情发生在什么时候？
 
 【年度计划】通过构建 **mermaid** 图实现，在该页面可直接编辑修改。
 
-【月度任务】下有【Habit Tracker】，通过JS和CSS实现，数据来源 Daily Note。而四大模块主要依赖Tasks和column插件，在页面内可直接编辑修改。新的月份需要模版时，可直接点击右上角调整为”源码模式“后，复制模版月，再粘贴到新月份即可。其中【Habit Tracker】需修改代码中对应的月份信息。
+【月度任务】下有【Habit Tracker】，通过 JS 和 CSS 实现，数据来源 Daily Note。而四大模块主要依赖 Tasks 和 column 插件，在页面内可直接编辑修改。新的月份需要模版时，可直接点击右上角调整为”源码模式“后，复制模版月，再粘贴到新月份即可。其中【Habit Tracker】需修改代码中对应的月份信息。
 
-【日程总览】是一个关于当前月的to do list日历图，由自行配置JS及CSS片段实现。
+【日程总览】是一个关于当前月的 to do list 日历图，由自行配置 JS 及 CSS 片段实现。
 
 ![Schedule Dashboard](./03Resources/00Obsidian/Assets/Schedule_dashboard.png)
 
@@ -116,11 +116,11 @@ Periodic Notes 回答的是另一个问题：**「事情发生在什么时候？
 
 ### 📚 阅读管理
 
-这是一个完整的 Reading Workflow，存放在【02Areas/01Reading/00Reading】中，本页面主要展示：
+这是一个完整的 Reading Workflow，存放在 “02Areas/01Reading/00Reading” 中，本页面主要展示：
 - 阅读统计
 - 书籍展示
 
-它通过 Dataview 自动更新，日常只需新增/修改【02Areas/01Reading】内的阅读笔记文件即可，适合长期阅读管理。
+它通过 Dataview 自动更新，日常只需新增/修改 “02Areas/01Reading” 内的阅读笔记文件即可，适合长期阅读管理。
 
 当然，这套逻辑完全可复用在其他Areas中，如 Film/Music的档案管理。
 
@@ -130,7 +130,7 @@ Periodic Notes 回答的是另一个问题：**「事情发生在什么时候？
 
 本仓库已配置【Templater】插件，并为常用文件夹【00PeriodicNotes】和【02Areas】设置了模版映射，例如：今日笔记模版——TP01_Diary 和读书笔记模版——TP02_Reading，根据自身习惯直接修改模版文档即可。
 
-![[Template.png]]
+![Template.png](03Resources/00Obsidian/Assets/Template.png)
 
 
 ## 插件说明
