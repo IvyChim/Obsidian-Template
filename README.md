@@ -94,21 +94,25 @@ Periodic Notes 回答的是另一个问题：**「事情发生在什么时候？
 
 ### 🏠 Home 首页
 
-是整个 Vault 的入口，由【homepage】插件生成，内容可自行编辑，插件可将其固定为首页布局，它主要提供【统计Dashboard、快速导航、最近活动页面入口】
+是整个 Vault 的入口，由【homepage】插件生成，内容可自行编辑，插件可将其固定为首页布局，它主要提供【统计Dashboard、快速导航、最近活动页面入口】。
+
+其中【Important Days】的日程维护在“00PeriodicNotes/ImportantDates”文件中，只需在文件编辑新增重要事件及日期，首页会自动调整显示，已过期事项将不再显示。
 
 ![Home](./03Resources/00Obsidian/Assets/Home.png)
 
-### ⏳ Schedule Dashboard (2026.md)
+### ⏳ 日程管理 (2026.md)
 
-本页面主要展示：年度计划、月度任务和日程总览。
+本页面主要展示：年度计划、月度任务和日程总览。其中：
 
-其中，【年度计划】通过构建 **mermaid** 图实现，在该页面可直接编辑修改。
+【年度计划】通过构建 **mermaid** 图实现，在该页面可直接编辑修改。
 
-【月度任务】下有【Habit Tracker】，通过JS和CSS实现，数据来源 Daily Note，而四大任务模块主要依赖Tasks插件，在页面内可直接编辑修改。
+【月度任务】下有【Habit Tracker】，通过JS和CSS实现，数据来源 Daily Note。而四大模块主要依赖Tasks和column插件，在页面内可直接编辑修改。新的月份需要模版时，可直接点击右上角调整为”源码模式“后，复制模版月，再粘贴到新月份即可。其中【Habit Tracker】需修改代码中对应的月份信息。
 
 【日程总览】是一个关于当前月的to do list日历图，由自行配置JS及CSS片段实现。
 
 ![Schedule Dashboard](./03Resources/00Obsidian/Assets/Schedule_dashboard.png)
+
+![Habit_tracker](./03Resources/00Obsidian/Assets/Habit_tracker.png)
 
 ### 📚 阅读管理
 
