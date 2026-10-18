@@ -1,3 +1,8 @@
+- Project Launch
+  - icon:: 🔖
+  - date:: 2026-11-15
+  - type:: Work
+
 - Birthday
   - icon:: 🎂
   - date:: 2026-12-05
@@ -5,11 +10,6 @@
 
 - Japan Trip
   - icon:: 🛫
-  - date:: 2026-09-10
+  - date:: 2027-04-10
   - type:: Travel
-
-- Project Launch
-  - icon:: 🔖
-  - date:: 2026-08-01
-  - type:: Work
 
