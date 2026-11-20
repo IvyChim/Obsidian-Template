@@ -1,0 +1,124 @@
+# Checks the "Birthday" event in ImportantDates.md once a day:
+# - If its date is in the past: move it one year ahead on the chore/bump-birthday branch,
+#   open a pull request and merge it into main right away.
+# - Otherwise: stop here.
+# This keeps the "Important Days" sample on the home page at one upcoming event and two past ones.
+
+name: Bump Birthday sample date
+
+on:
+  schedule:
+    # Every day at 23:07 UTC, i.e. 00:07 (winter) / 01:07 (summer) in Stockholm
+    - cron: "7 23 * * *"
+  # Allow manual runs from the Actions tab, e.g. for testing
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bump-birthday-date
+  cancel-in-progress: false
+
+env:
+  EVENTS_FILE: 00PeriodicNotes/ImportantDates.md
+  EVENT_NAME: Birthday
+  TIMEZONE: Europe/Stockholm
+  BASE_BRANCH: main
+  # A single long-lived branch, reused every year and never deleted after merging.
+  # Note: "Automatically delete head branches" must be off in the repository settings,
+  # otherwise GitHub deletes this branch after each merge.
+  BUMP_BRANCH: chore/bump-birthday
+
+jobs:
+  bump-birthday:
+    # Scheduled runs only happen in the original template repository, so that repositories
+    # created from this template never get their owner's real birthday changed.
+    # Manual runs (workflow_dispatch) work anywhere.
+    if: github.repository == 'IvyChim/Obsidian-Template' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ env.BASE_BRANCH }}
+
+      - name: Check whether Birthday is in the past
+        id: check
+        run: python3 .github/scripts/bump_birthday.py "$EVENTS_FILE"
+
+      # ---- The steps below only run if the date is in the past; otherwise the workflow ends here ----
+
+      - name: Commit to the bump branch and push
+        if: steps.check.outputs.changed == 'true'
+        env:
+          NEW_DATE: ${{ steps.check.outputs.new_date }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          # Start the branch from the latest main every time, then add this change
+          git switch -C "$BUMP_BRANCH"
+          git add "$EVENTS_FILE"
+          git commit -m "chore: bump ${EVENT_NAME} sample date to ${NEW_DATE}"
+          # The branch is kept between runs and still holds the previous commit (already
+          # squash-merged into main), so force-push to make it "latest main + this change"
+          git push --force origin "$BUMP_BRANCH"
+
+      - name: Open pull request and merge it
+        if: steps.check.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          OLD_DATE: ${{ steps.check.outputs.old_date }}
+          NEW_DATE: ${{ steps.check.outputs.new_date }}
+        run: |
+          # Reuse the pull request if an earlier run opened one but failed to merge it
+          pr_url=$(gh pr list --head "$BUMP_BRANCH" --base "$BASE_BRANCH" --state open --json url --jq '.[0].url // empty')
+
+          if [ -z "$pr_url" ]; then
+            pr_url=$(gh pr create \
+              --base "$BASE_BRANCH" \
+              --head "$BUMP_BRANCH" \
+              --title "chore: bump ${EVENT_NAME} sample date to ${NEW_DATE}" \
+              --body "The sample event \"${EVENT_NAME}\" in \`${EVENTS_FILE}\` was on ${OLD_DATE}, which is now in the past. This moves it to ${NEW_DATE} so the Important Days card always has one upcoming event.
+
+          Opened and merged automatically by the \`${GITHUB_WORKFLOW}\` workflow.")
+          fi
+          echo "Pull request: $pr_url"
+
+          # Merge right away, no approval needed.
+          # GitHub may need a few seconds to compute mergeability of a new pull request, so retry a few times
+          for attempt in 1 2 3 4 5; do
+            if gh pr merge "$pr_url" --squash; then
+              merged=true
+              break
+            fi
+            echo "Merge attempt $attempt failed, retrying in 10 seconds..."
+            sleep 10
+          done
+
+          if [ "${merged:-false}" != "true" ]; then
+            echo "::error::Could not merge $pr_url"
+            exit 1
+          fi
+
+  # GitHub disables scheduled workflows in public repositories after 60 days without activity.
+  # This workflow only commits once a year, so it re-enables itself on every run to reset that timer.
+  keepalive:
+    if: github.repository == 'IvyChim/Obsidian-Template'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+    steps:
+      - name: Re-enable this workflow
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          workflow_file=$(basename "${GITHUB_WORKFLOW_REF%@*}")
+          gh api -X PUT "repos/${GITHUB_REPOSITORY}/actions/workflows/${workflow_file}/enable"
+          echo "Re-enabled ${workflow_file}"

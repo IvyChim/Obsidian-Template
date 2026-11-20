@@ -70,6 +70,7 @@ Periodic Notes 回答的是另一个问题：**「事情发生在什么时候？
 
 ```text
 .
+├── .github              # GitHub Actions（自动更新示例日期，仅本仓库使用）
 ├── .obsidian            # Obsidian 配置
 ├── 00PeriodicNotes      # 时间维度（日记、周记、月记等）
 ├── 01Projects           # 项目
@@ -97,6 +98,12 @@ Periodic Notes 回答的是另一个问题：**「事情发生在什么时候？
 是整个 Vault 的入口，由【homepage】插件生成，内容可自行编辑，插件可将其固定为首页布局，它主要提供【统计Dashboard、快速导航、最近活动页面入口】。
 
 其中【Important Days】的日程维护在“00PeriodicNotes/ImportantDates”文件中，只需在文件编辑新增重要事件及日期，首页会自动调整显示，已过期事项将不再显示。
+
+> 💡 **关于示例日期**：`ImportantDates` 中预置了 3 个示例事件，用来演示显示效果。其中 **Birthday 始终是未来的日期**，Japan Trip 和 Project Launch 是已过期的日期，所以首页只会显示 Birthday 一项，这是正常的。
+>
+> 为了让示例一直有效，本仓库配置了一个 GitHub Actions 自动任务（`.github/workflows/bump-birthday-date.yml`）：每天检查一次 Birthday，过期后自动顺延一年，通过 `chore/bump-birthday` 分支提交 PR 并合并到 main。
+>
+> 这个自动任务**只在本仓库运行**，不会影响你下载后的 Vault；即使你把 Vault 上传到自己的 GitHub 仓库，它也不会自动修改你的日期。下载后直接把示例事件替换成你自己的重要日期即可，不需要的话也可以删除 `.github` 文件夹。
 
 ![Home](./03Resources/00Obsidian/Assets/Home.png)
 
