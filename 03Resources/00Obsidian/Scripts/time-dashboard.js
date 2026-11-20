@@ -112,13 +112,13 @@ const eventPage =
 let events = [];
 
 
-if(eventPage){
+if(eventPage && eventPage.file && eventPage.file.lists){
 
 
     const rootEvents =
         eventPage.file.lists
         .filter(
-            item => item.list === 0
+            item => item.parent == null
         );
 
 
@@ -150,7 +150,7 @@ if(eventPage){
 
 
                     const text =
-                        child.text.trim();
+                        child.text ? child.text.trim() : "";
 
 
 
@@ -160,6 +160,11 @@ if(eventPage){
                             text
                             .replace("icon::","")
                             .trim();
+
+                    } else if(child.icon){
+
+                        event.icon =
+                            String(child.icon).trim();
 
                     }
 
@@ -174,6 +179,11 @@ if(eventPage){
                                 .trim()
                             );
 
+                    } else if(child.date){
+
+                        event.date =
+                            dv.date(child.date);
+
                     }
 
 
@@ -184,6 +194,11 @@ if(eventPage){
                             text
                             .replace("type::","")
                             .trim();
+
+                    } else if(child.type){
+
+                        event.type =
+                            String(child.type).trim();
 
                     }
 
